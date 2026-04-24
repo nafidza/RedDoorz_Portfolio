@@ -15,7 +15,7 @@
   - [Stage 5 - Property Benchmarking](#stage-5---property-benchmarking)
   - [Stage 6 - Customer Prioritization](#stage-6---customer-prioritization)
   - [Stage 7 - Dashboard Development](#stage-7---dashboard-development)
-  - [Stage 8 — Key Insights & Business Recommendations](#stage-8--key-insights--business-recommendations)
+  - [Stage 8 - Key Insights & Business Recommendations](#stage-8---key-insights--business-recommendations)
 - [Final Management Priority Roadmap](#final-management-priority-roadmap)
 - [Executive Takeaway](#executive-takeaway)
 
@@ -768,7 +768,7 @@ https://github.com/user-attachments/assets/5538bde7-1367-4ddf-9304-8e8ca36fd8a3
 
 ---
 
-# Stage 8 — Key Insights & Business Recommendations
+# Stage 8 - Key Insights & Business Recommendations
 
 Based on the dashboard analysis, several strategic insights were identified across revenue performance, property portfolio, and customer segmentation.
 
