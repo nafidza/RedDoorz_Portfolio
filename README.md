@@ -813,8 +813,8 @@ Launch a **"Portfolio Remediation"** program. Instead of just adding new propert
 
 **Current State:** Customer revenue is well diversified across **20 segments**, but long-term value is concentrated in a smaller group of high-performing business traveler segments.
 
-- **Value Leaders:** Highest current value came from **Business|45–54|New User**, driven by strong revenue and ARPU.
-- **Future Winners:** Highest future potential came from **Business|55–60|Repeat User**, supported by strong retention and growth.
+- **Value Leaders:** Highest current value came from **'Business, 45–54, New User'**, driven by strong revenue and ARPU.
+- **Future Winners:** Highest future potential came from **'Business, 55–60, Repeat User'**, supported by strong retention and growth.
 - **Segment Pattern:** Most **Star, Cash Cow, and Mature Cash** segments were dominated by **Business-purpose users aged 25–60**.
 - **Selective Leisure Opportunity:** Several leisure repeat-user segments showed strong upside, proving growth is not limited to business travelers alone.
 
