@@ -1,4 +1,4 @@
-# RedDoorz Commercial Performance Analytics Project
+# RedDoorz Performance Analytics Project
 <img width="736" height="520" alt="WhatsApp Image 2026-04-24 at 10 32 17" src="https://github.com/user-attachments/assets/b9593280-7ce9-4952-a464-bb58db8a7267" />
 
 ---
