@@ -527,6 +527,7 @@ Each segment was ranked using percentile distribution to ensure a balanced class
    - ***Logic:*** Score = (0.4 * Growth) + (0.6 * Retention)
    
 ### Strategic Classification Matrix
+
 | Future Potential | Current Value | Priority Label |
 | ---------------- | ------------- | -------------- |
 | High | Low | Growth Bet |
