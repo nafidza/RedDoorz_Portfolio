@@ -764,7 +764,10 @@ final_segment_matrix = df_matrix[[
 
 # Stage 7 - Dashboard Development
 
-![](https://github.com/user-attachments/assets/5538bde7-1367-4ddf-9304-8e8ca36fd8a3)
+
+https://github.com/user-attachments/assets/0a42aa87-95dd-4b9f-81a7-6f344cb21dd5
+
+
 
 ---
 
