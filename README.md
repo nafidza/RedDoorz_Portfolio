@@ -813,8 +813,8 @@ Launch a **"Portfolio Remediation"** program. Instead of just adding new propert
 
 **Current State:** Customer revenue is well diversified across **20 segments**, but long-term value is concentrated in a smaller group of high-performing business traveler segments.
 
-- **Value Leaders:** Highest current value came from **Business | 45–54 | New User**, driven by strong revenue and ARPU.
-- **Future Winners:** Highest future potential came from **Business | 55–60 | Repeat User**, supported by strong retention and growth.
+- **Value Leaders:** Highest current value came from **Business|45–54|New User**, driven by strong revenue and ARPU.
+- **Future Winners:** Highest future potential came from **Business|55–60|Repeat User**, supported by strong retention and growth.
 - **Segment Pattern:** Most **Star, Cash Cow, and Mature Cash** segments were dominated by **Business-purpose users aged 25–60**.
 - **Selective Leisure Opportunity:** Several leisure repeat-user segments showed strong upside, proving growth is not limited to business travelers alone.
 
@@ -826,16 +826,16 @@ Launch a **"Precision Customer Growth"** strategy. Prioritize retention and upse
 
 # Final Management Priority Roadmap
 
-## 🔴 High Priority (Immediate Impact)
+## High Priority (Immediate Impact)
 - **Yield Optimization:** Implement dynamic pricing to break the $15 ADR ceiling during peak last-minute demand (Day 0 lead time).
 - **Yogyakarta Expansion:** Aggressively scale supply and marketing in Yogyakarta to capitalize on its high conversion rate.
 - **Turnaround Plans:** Identify "Weak" properties with high potential and implement 90-day recovery plans.
 
-## 🟡 Medium Priority (Sustainable Growth)
+## Medium Priority (Sustainable Growth)
 - **Segment-Specific UI/UX:** Tailor the booking experience for mature business users (efficiency/invoice-focused) vs. leisure users (discovery/promo-focused).
 - **Brand Re-invigoration:** Address the slowing growth of the core RedDoorz brand by diversifying the brand mix.
 
-## 🟢 Ongoing (Operational Excellence)
+## Ongoing (Operational Excellence)
 - **Decision Intelligence:** Transition from tracking "Total Revenue" to "Revenue Mix" (RN Growth vs. ADR Growth).
 - **Median Health Monitoring:** Use Median Growth as the primary KPI for portfolio health to avoid being misled by a few top-performing assets.
 
