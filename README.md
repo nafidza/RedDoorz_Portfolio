@@ -1,6 +1,26 @@
 # RedDoorz Commercial Performance Analytics Project
 <img width="736" height="520" alt="WhatsApp Image 2026-04-24 at 10 32 17" src="https://github.com/user-attachments/assets/b9593280-7ce9-4952-a464-bb58db8a7267" />
 
+---
+
+# Table of Content
+
+- [Business Understanding](#business-understanding)
+- [Data Source](#data-source)
+- [Stages of Analysis](#stages-of-analysis)
+  - [Stage 1 - Data Preparation](#stage-1---data-preparation)
+  - [Stage 2 - Feature Engineering (Occupancy Rate)](#stage-2---feature-engineering-occupancy-rate)
+  - [Stage 3 - Exploratory Data Analysis](#stage-3---exploratory-data-analysis)
+  - [Stage 4 - Revenue Driver Analysis](#stage-4---revenue-driver-analysis)
+  - [Stage 5 - Property Benchmarking](#stage-5---property-benchmarking)
+  - [Stage 6 - Customer Prioritization](#stage-6---customer-prioritization)
+  - [Stage 7 - Dashboard Development](#stage-7---dashboard-development)
+  - [Stage 8 — Key Insights & Business Recommendations](#stage-8--key-insights--business-recommendations)
+- [Final Management Priority Roadmap](#final-management-priority-roadmap)
+- [Executive Takeaway](#executive-takeaway)
+
+---
+
 # Business Understanding
 ## Background
 As a hospitality platform operating across multiple cities and property partners, RedDoorz needs data-driven visibility into business performance, portfolio health, and customer opportunities.
@@ -12,14 +32,18 @@ Management requires a centralized analytical framework to understand:
 - Which customer segments should be prioritized for marketing investment
 - What strategic actions can improve revenue and portfolio efficiency
 
+---
+
 ## Business Problems
 Despite revenue growth, management lacks clarity on:
 1. Is business growth healthy and sustainable?
-2. Which operational levers drive revenue: occupancy, room nights, or ADR?
+2. Which operational levers drive revenue: room nights or ADR?
 3. Which properties are top performers vs underperformers?
 4. Which cities have pricing upside or demand weakness?
 5. Which customer segments offer highest current value and future potential?
 6. Where should marketing and commercial resources be prioritized?
+
+---
 
 ## Project Objectives
 This project aims to build an end-to-end commercial analytics dashboard that helps decision-makers:
@@ -29,27 +53,35 @@ This project aims to build an end-to-end commercial analytics dashboard that hel
 - Prioritize customer segments for marketing strategy
 - Generate actionable business recommendations
 
+---
+
 ## Key Business Questions
-### Executive Performance
+**Executive Performance**
 - How did Revenue, Occupancy, ADR, and Room Nights perform YTD 2024 vs prior year?
 - Which cities and brand types contribute most revenue?
-### Revenue Drivers
+
+**Revenue Drivers**
 - Is revenue growth driven by higher bookings volume or better pricing?
 - Which cities are volume-led vs pricing-led?
-### Property Benchmarking
+
+**Property Benchmarking**
 - Which properties are Star, Strong, Average, or Weak?
 - Is growth concentrated in a few properties or broad across portfolio?
-### Customer Strategy
+
+**Customer Strategy**
 - Which segments generate the most revenue?
 - Which segments have strongest retention and growth?
 - Which customer groups deserve acquisition vs loyalty budget?
 
+---
 
 # Data Source
 This project uses three relational datasets representing hospitality business operations.
 - **Transaction Data:** Booking-level transactional records used to measure business performance.
 - **Customer Data:** Customer demographic and behavioral attributes used for segmentation.
 - **Property Data:** Partner property information used for benchmarking.
+
+---
 
 # Stages of Analysis
 - Stage 1 - Data Preparation
@@ -61,10 +93,10 @@ This project uses three relational datasets representing hospitality business op
 - Stage 7 - Dashboard Development
 - Stage 8 - Analysis
 
-
+---
 
 # Stage 1 - Data Preparation
-## Activities
+## Activities:
 - Validate date formats
 - Clean missing values
 - Remove duplicates
@@ -73,7 +105,7 @@ This project uses three relational datasets representing hospitality business op
   - Remove inconsistency data where 'check_in_date > booking_date'
   - Remove inconsistency data where 'booking_date > cohort_date'
 
-## Python Quiery
+## Python Query:
 ```python
 import pandas as pd
 
@@ -95,14 +127,14 @@ bookings_df2 = pd.merge(
 bookings_df2 = bookings_df2[bookings_df2['BOOKING_DATE'] >
                             bookings_df2['COHORT_DATE']].reset_index(drop=True)
 ```
-## Output
+
+## Output:
 Clean analytical base table for reporting.
 
-
-
+---
 
 # Stage 2 - Feature Engineering (Occupancy Rate)
-## Python Quiery
+## Python Query:
 ```python
 import pandas as pd
 import numpy as np
@@ -154,14 +186,15 @@ monthly_data['ADR'] = monthly_data['REVENUE_DOLLAR'] / monthly_data['ROOM_NIGHTS
 # Delete rows if the revenue < 0 (inconsistency)
 monthly_data = monthly_data[monthly_data['REVENUE_DOLLAR'] > 0].copy()
 ```
-## Output
+
+## Output:
 Engineered a dynamic Occupancy Rate feature by aggregating monthly property data. This metric serves as a core KPI for benchmarking property performance and driving data-driven strategic planning for future business growth.
 
-
+---
 
 # Stage 3 - Exploratory Data Analysis
-## Revenue Trend (2020-2024)
-### Python Quiery
+## 1. Revenue Trend (2020-2024)
+### Python Query:
 ```python
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -186,13 +219,15 @@ plt.grid(True, axis='y', alpha=0.3)
 plt.legend()
 plt.show()
 ```
-### Output
+### Output:
 <img width="1333" height="549" alt="Revenue Trend" src="https://github.com/user-attachments/assets/01246548-c8a4-4fe6-95d7-e60499ced9eb" />
 
 **Brief Insight** : The chart illustrates a robust ***long-term bullish trend*** in monthly revenue, growing from approximately $2,500 in 2020 to over $33,000 by mid-2024. A key insight is the significant momentum gained after 2022, where revenue consistently outperformed the historical average. This steady progression indicates ***strong market demand*** and ***effective operational scaling*** over the four-year period.
 
-## Total Bookings by Stay Duration
-### Python Quiery
+---
+
+## 2. Total Bookings by Stay Duration
+### Python Query:
 ```python
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -210,13 +245,15 @@ stay_duration_plot.set_xlabel('Stay Duration', fontsize=12)
 stay_duration_plot.set_ylabel('Number of Bookings', fontsize=12)
 plt.show()
 ```
-### Output
+### Output:
 <img width="639" height="476" alt="Stay Duration Distributions" src="https://github.com/user-attachments/assets/b0c23e44-6699-4e46-abb3-5981feee78d5" />
 
 **Brief Insight** : The bookings are classified as ***short-term***, as the maximum stay duration is only ***3 days***. Furthermore, the volume is evenly distributed across all stay durations.
 
-## Total Bookings by Lead Time
-### Python Quiery
+---
+
+## 3. Total Bookings by Lead Time
+### Python Query:
 ```python
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -234,14 +271,15 @@ lead_time_plot.set_xlabel('Lead Time', fontsize=12)
 lead_time_plot.set_ylabel('Number of Bookings', fontsize=12)
 plt.show()
 ```
-### Output
+### Output:
 <img width="872" height="553" alt="Lead Time Distributions" src="https://github.com/user-attachments/assets/502c19fc-9450-48d0-b2b2-d127593f2a5e" />
 
 **Brief Insight** : The distribution reveals a significant ***right-skewed pattern***, where the vast majority of bookings are made with a ***0 to 2-day lead time***. With over 18,000 bookings occurring on day zero, the business exhibits a high reliance on ***spontaneous or last-minute travelers***. This insight is critical for operational readiness and suggests that ***real-time dynamic pricing strategies*** are essential to capture maximum value from this high-volume, short-notice segment.
 
+---
 
-## Bookings Distribution by ADR
-### Python Quiery
+## 4. Bookings Distribution by ADR
+### Python Query:
 ```python
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -257,23 +295,24 @@ plt.ylabel('Frequency', fontsize=12)
 plt.show()
 ```
 
-### Output
+### Output:
 <img width="863" height="553" alt="ADR Distributions" src="https://github.com/user-attachments/assets/09176731-d027-4e13-a1ef-65e407eb8584" />
 
 **Brief Insight** : The ADR distribution reveals a ***multi-modal pattern*** with a heavy concentration in the ***$2 – $5 range***, identifying it as ***the primary market volume driver***. The sharp decline in frequency beyond ***$15*** suggests a critical price ceiling for the majority of the customer base.
 
+---
 
 # Stage 4 - Revenue Driver Analysis
-## Method
+## Method:
 Revenue decomposition framework used to split growth into:
 - Room Night effect (volume)
 - ADR effect (pricing)
 
-## Objective
+## Objective:
 Identify whether business growth depends on occupancy/volume or monetization.
 
-## Python Quiery
-***Identified for Overall Level***
+## Python Query:
+***1. Identified for Overall Level***
 ```python
 import pandas as pd
 import numpy as np
@@ -344,7 +383,7 @@ decomp_overall['ADR_Pct'] = (decomp_overall['ADR_Contribution'] / decomp_overall
 decomp_overall['RNS_Pct'] = (decomp_overall['RNS_Contribution'] / decomp_overall['delta_REV'].abs()) * 100
 ```
 
-***Identified for City, Brand Type, & Property Level***
+***2. Identified for City, Brand Type, & Property Level***
 ```python
 # Core Decomposition Function (MoM)
 def get_revenue_decomposition(df, dimensions):
@@ -396,23 +435,29 @@ report_brand = get_revenue_decomposition(monthly_data, ['BRAND_TYPE'])
 report_property = get_revenue_decomposition(monthly_data, ['PROPERTY_CODE'])
 ```
 
+---
+
 # Stage 5 - Property Benchmarking
-## Method
-Scoring model using:
+## Method:
+**Scoring model using:**
 - Occupancy
 - ADR
 - Growth
 
-Properties categorized into:
+**Logic:**
+
+- Score = (0.4 * Occupancy) + (0.4 * ADR) + (0.2 * Growth)
+
+**Properties categorized into:**
 - Star 
 - Strong
 - Average
 - Weak
 
-## Objective
+## Objective:
 Identify top assets and underperforming portfolio.
 
-## Python Quiery
+## Python Query:
 ```python
 import pandas as pd
 import numpy as np
@@ -483,9 +528,11 @@ print(f"=== Benchmarking Report (Distribution Based) Quarter: {target_quarter} =
 print(final_report[['PROPERTY_CODE','ADR', 'OCC', 'GROWTH', 'FINAL_SCORE', 'RATING']].sort_values('FINAL_SCORE', ascending=False))
 ```
 
+---
+
 # Stage 6 - Customer Prioritization
-## Method
-### Customer Segmentation Logic
+## Method:
+### 1. Customer Segmentation Logic
 
 Customer segments were created using three dimensions:
 - Travel Purpose (Business / Leisure)
@@ -517,7 +564,8 @@ This generated 20 strategic customer segments for commercial prioritization.
 | 19 | Leisure | 45-54 | Repeat User |
 | 20 | Leisure | 55-60 | Repeat User |
 
-### The 3x3 Prioritization Framework
+### 2. The 3x3 Prioritization Framework
+
 Each segment was ranked using percentile distribution to ensure a balanced classification into Low, Medium, and High categories.
 1. **Current Value Score**, Calculates the segment's immediate economic contribution.
    - ***Metrics:*** Revenue (Weighted 50%) + ARPU (Weighted 50%)
@@ -526,7 +574,7 @@ Each segment was ranked using percentile distribution to ensure a balanced class
    - ***Metrics:*** Revenue Growth (Weighted 40%) + Retention Rate (Weighted 60%)
    - ***Logic:*** Score = (0.4 * Growth) + (0.6 * Retention)
    
-### Strategic Classification Matrix
+### 3. Strategic Classification Matrix
 
 | Future Potential | Current Value | Priority Label |
 | ---------------- | ------------- | -------------- |
@@ -540,8 +588,8 @@ Each segment was ranked using percentile distribution to ensure a balanced class
 | Low | Medium |Defend Selectively |
 | Low | High | Mature Cash |
 
-## Python Quiery
-***Create Segments***
+## Python Query:
+***1. Create Segments***
 ```python
 import pandas as pd
 import numpy as np
@@ -580,7 +628,7 @@ df_final_detail = df_user_detail[[
 ]]
 ```
 
-***Find Revenue, ARPU, Growth, and Retention Rate for each segments***
+***2. Find Revenue, ARPU, Growth, and Retention Rate for each segments***
 ```python
 import pandas as pd
 import numpy as np
@@ -664,7 +712,7 @@ segment_final_report = segment_final_report[output_columns].fillna(0)
 segment_final_report = segment_final_report.sort_values('REVENUE_2024', ascending=False).reset_index(drop=True)
 ```
 
-***Create Priority Labels***
+***3. Create Priority Labels***
 ```python
 import pandas as pd
 import numpy as np
@@ -712,6 +760,84 @@ final_segment_matrix = df_matrix[[
 ]]
 ```
 
-
+---
 
 # Stage 7 - Dashboard Development
+
+https://github.com/user-attachments/assets/5538bde7-1367-4ddf-9304-8e8ca36fd8a3
+
+---
+
+# Stage 8 — Key Insights & Business Recommendations
+
+Based on the dashboard analysis, several strategic insights were identified across revenue performance, property portfolio, and customer segmentation.
+
+---
+
+## 1. Executive Overview - Key Insights
+
+In 2024, the business demonstrated robust topline momentum with a **YTD Revenue of USD 285.1K (+27.2% YoY)**. However, a deep dive into the drivers reveals that growth is heavily **volume-led** (increased bookings) rather than **yield-driven** (ADR/Pricing). The strategic focus must now shift from pure demand acquisition to **Portfolio Optimization** and **Yield Management**.
+
+---
+
+## 2. Revenue Driver Analysis - Key Insights
+
+**Current State:** Revenue growth is primarily fueled by a surge in **Room Nights (RNs)**, while ADR has remained stagnant or softened across all cities and brands.
+
+- **Monetization Ceiling:** Most ADR values remain **under USD 15**. While this ensures **competitiveness** in the budget segment, it **limits the profit margin** per booking.
+- **The Scalability Risk:** Relying solely on volume is risky. If market demand plateaus, revenue will stall because the pricing lever is currently underutilized.
+- **City Spotlight:** Yogyakarta is the clear winner with **+38% YoY revenue growth**, driven by a massive **+37% surge in bookings**. It is the primary candidate for a **"Price Elasticity Test"** to improve margins.
+
+### Strategic Mandate
+Transition from **"Market Capture"** to **"Yield Optimization"**. Implement dynamic pricing models to capture upside during high-demand periods.
+
+---
+
+## 3. Property Performance Benchmarking – Key Insights
+
+**Current State:** Portfolio health is uneven. While total revenue is up, more than **50% of properties** show **flat or negative growth**.
+
+- **Performance Concentration:** Growth is carried by a small group of **Star Properties (approx. 10%)**.
+- **The Median Reality:** The portfolio's **Median Growth is negative (-0.3% to -2.4%)**, indicating that the "Average" property is actually struggling to keep up with last year's performance.
+- **Dynamic Leadership:** Leadership at the city level is **seasonal**. Malang overtook Yogyakarta in Q3, suggesting that "Best Practice" playbooks should be **localized and seasonal rather than static**.
+
+### Strategic Mandate
+Launch a **"Portfolio Remediation"** program. Instead of just adding new properties, focus on **moving the "Weak" and "Average" assets toward the "Strong" benchmark** through operational standardized playbooks.
+
+
+---
+## 4. Customer Segment Prioritization – Key Insights
+
+**Current State:** Customer revenue is well diversified across **20 segments**, but long-term value is concentrated in a smaller group of high-performing business traveler segments.
+
+- **Value Leaders:** Highest current value came from **Business | 45–54 | New User**, driven by strong revenue and ARPU.
+- **Future Winners:** Highest future potential came from **Business | 55–60 | Repeat User**, supported by strong retention and growth.
+- **Segment Pattern:** Most **Star, Cash Cow, and Mature Cash** segments were dominated by **Business-purpose users aged 25–60**.
+- **Selective Leisure Opportunity:** Several leisure repeat-user segments showed strong upside, proving growth is not limited to business travelers alone.
+
+### Strategic Mandate
+
+Launch a **"Precision Customer Growth"** strategy. Prioritize retention and upsell programs for high-value business travelers, while building targeted conversion campaigns to turn promising leisure and new-user segments into repeat profitable customers.
+
+---
+
+# Final Management Priority Roadmap
+
+## 🔴 High Priority (Immediate Impact)
+- **Yield Optimization:** Implement dynamic pricing to break the $15 ADR ceiling during peak last-minute demand (Day 0 lead time).
+- **Yogyakarta Expansion:** Aggressively scale supply and marketing in Yogyakarta to capitalize on its high conversion rate.
+- **Turnaround Plans:** Identify "Weak" properties with high potential and implement 90-day recovery plans.
+
+## 🟡 Medium Priority (Sustainable Growth)
+- **Segment-Specific UI/UX:** Tailor the booking experience for mature business users (efficiency/invoice-focused) vs. leisure users (discovery/promo-focused).
+- **Brand Re-invigoration:** Address the slowing growth of the core RedDoorz brand by diversifying the brand mix.
+
+## 🟢 Ongoing (Operational Excellence)
+- **Decision Intelligence:** Transition from tracking "Total Revenue" to "Revenue Mix" (RN Growth vs. ADR Growth).
+- **Median Health Monitoring:** Use Median Growth as the primary KPI for portfolio health to avoid being misled by a few top-performing assets.
+
+---
+
+# Executive Takeaway
+
+Phase 1 was about **Demand Recovery**. Phase 2 must be about **Asset Productivity**. To sustain long-term growth, the business must pivot from 'Cheap Volume' to Strategic Monetization and Operational Equalization across the property network.
