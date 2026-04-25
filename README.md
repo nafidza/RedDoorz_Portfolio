@@ -102,8 +102,8 @@ This project uses three relational datasets representing hospitality business op
 - Remove duplicates
 - Remove inconsistency data
   - Remove inconsistency data where 'check_in_date > chech_out_date'
-  - Remove inconsistency data where 'check_in_date > booking_date'
-  - Remove inconsistency data where 'booking_date > cohort_date'
+  - Remove inconsistency data where 'check_in_date < booking_date'
+  - Remove inconsistency data where 'booking_date < cohort_date'
 
 ## Python Query:
 ```python
@@ -113,11 +113,11 @@ import pandas as pd
 bookings_df = bookings_df[bookings_df['CHECK_OUT_DATE'] >
                           bookings_df['CHECK_IN_DATE']].reset_index(drop=True)
 
-# Remove inconsistency data where 'check_in_date > booking_date'
+# Remove inconsistency data where 'check_in_date < booking_date'
 bookings_df = bookings_df[bookings_df['CHECK_IN_DATE'] >=
                           bookings_df['BOOKING_DATE']].reset_index(drop=True)
 
-# Remove inconsistency data where 'booking_date > cohort_date'
+# Remove inconsistency data where 'booking_date < cohort_date'
 bookings_df2 = pd.merge(
     bookings_df,
     property_df[['PROPERTY_CODE', 'COHORT_DATE']],
