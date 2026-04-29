@@ -195,8 +195,8 @@ Users are categorized into 20 distinct segments using a combination of:
 
 ## The Prioritization Framework:
 Each segment is evaluated through two critical lenses:
-- **Current Value (50% Revenue | 50% ARPU):** Measures the immediate "cash engine" of the segment. It balances the total volume of money coming in with the individual spending power of each user.
-- **Future Potential (40% Growth | 60% Retention):** Forecasts long-term sustainability. It prioritizes segments that are not only growing in size but, more importantly, are consistently returning to the platform.
+- **Current Value (50% Revenue + 50% ARPU):** Measures the immediate "cash engine" of the segment. It balances the total volume of money coming in with the individual spending power of each user.
+- **Future Potential (40% Growth + 60% Retention):** Forecasts long-term sustainability. It prioritizes segments that are not only growing in size but, more importantly, are consistently returning to the platform.
 
 ## Strategic Outcomes:
 The result is a Classification Matrix that guides commercial action:
