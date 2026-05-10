@@ -168,7 +168,9 @@ To drive strategic asset management, this stage implements a **multi-criteria sc
 ## The Scoring Logic:
 I utilize a weighted formula to calculate a **Final Performance Score:**
 
-***Final Score = (0.4 * Occupancy) + (0.4 * ADR) + (0.4 * Growth)***
+```
+Final Score = (0.4 * Occupancy) + (0.4 * ADR) + (0.2 * Growth)
+```
 
 ***Note:*** The weight distribution (40/40/20) is designed to prioritize a balanced Revenue Management strategy, optimizing for both market volume (Occupancy) and pricing power (ADR) while maintaining a baseline for growth momentum.
 
