@@ -292,6 +292,8 @@ Phase 1 was about **Demand Recovery**. Phase 2 must be about **Asset Productivit
 
 ---
 # Technical Resources
-For a detailed step-by-step technical breakdown, including Python scripts for all 6 stages, please refer to:
+For a detailed step-by-step technical breakdown, including Python and MySQL scripts for all stages, please refer to:
 
-**Source Code:** [Google Colab Notebook](https://colab.research.google.com/drive/1VhUIdYZ4fwIOt8FNcihVkQzjXW9d8NYQ?usp=sharing)
+**Python Code:** [Google Colab Notebook](https://colab.research.google.com/drive/1VhUIdYZ4fwIOt8FNcihVkQzjXW9d8NYQ?usp=sharing)
+
+**MySQL Code:** [MySQL Notebook](./scripts/data_analysis_transformation.sql)
